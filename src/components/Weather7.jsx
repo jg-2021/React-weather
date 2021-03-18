@@ -1,9 +1,9 @@
 
 
-const Weather7 = ({weather}) => {
+const Weather7 = () => {
     return (
         <div>
-            <h1>{weather}</h1>
+            <h1>weather 7</h1>
         </div>
     )
 }

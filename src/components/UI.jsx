@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import Font, { Text } from 'react-font'
+import { useHistory } from 'react-router-dom';
+
 
 
 const UI = ({tstyle,bstyle}) => {
 
     const [zip, setZip] = useState('');
     const [weather, setWeather] = useState('');
-    
+    const history = useHistory();
     
 
     const _handleEntry = (e) => {
@@ -23,6 +25,8 @@ const UI = ({tstyle,bstyle}) => {
             // console.log(weatherData);
             }
             console.log(weather)
+            // let path ='/Weather1'
+            // history.push(path);
 
     
     
@@ -85,6 +89,7 @@ const UI = ({tstyle,bstyle}) => {
             </Font>
             {/* {!!submitError && <div className='error'>{submitError}</div>} */}
         </>
+        
         </div>
     )
 }
