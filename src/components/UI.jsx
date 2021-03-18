@@ -1,11 +1,12 @@
 import { useState } from 'react';
+import Font, { Text } from 'react-font'
 
 
-const UI = () => {
+const UI = ({tstyle,bstyle}) => {
 
     const [zip, setZip] = useState('');
     const [weather, setWeather] = useState('');
-    const [tcolor, setTcolor] = useState('');
+    
     
 
     const _handleEntry = (e) => {
@@ -21,20 +22,18 @@ const UI = () => {
             setWeather(weatherData);
             // console.log(weatherData);
             }
-            // console.log(weather)
+            console.log(weather)
 
     
-    const _style = (e) =>{
-        const color = e.target.value
-        setTcolor(color)
-    }
+    
             
 
     return (
         <div>
             <>
-            <form onSubmit={_handleSubmit}>
-                <label htmlFor='zip'> What Would You Like To See?
+            <Font family='Stick' style={{fontSize:70, margin:0}} onAllLoad={()=>console.log('all fonts loaded')}>
+            <form onSubmit={_handleSubmit}style={{fontSize:25, margin:30}}>
+                <label htmlFor='zip' > What Would You Like To See?
                     </label><br/>
                     <input
                         type='text'
@@ -45,7 +44,7 @@ const UI = () => {
                     /> <br/>   
                      <label htmlFor='tcolor'> Choose A Text Color &nbsp;
                     </label>
-                    <select name="tcolor" id="tcolor" style={{backgroundColor: tcolor}} onChange={_style}>
+                    <select name="tcolor" id="tcolor" onChange={tstyle}>
                         <option value="green">Green</option>
                         <option value="red">Red</option>
                         <option value="black">Black</option>
@@ -55,7 +54,7 @@ const UI = () => {
                     </select><br/>
                     <label htmlFor='bcolor'> Choose A Background Color &nbsp;
                     </label>
-                    <select name="bcolor" id="bcolor">
+                    <select name="bcolor" id="bcolor" onChange={bstyle}>
                     <option value="black">Black</option>
                         <option value="blue">Blue</option>
                         <option value="red">Red</option>
@@ -81,8 +80,9 @@ const UI = () => {
                         </optgroup>
                     </select><br/>
                 
-                <button type='submit'>See Weather</button>
+                <button type='submit' style={{width:'300px', height:'40px'}}>See Weather</button>
             </form>
+            </Font>
             {/* {!!submitError && <div className='error'>{submitError}</div>} */}
         </>
         </div>
