@@ -13,7 +13,7 @@ import React from 'react'
 function App() {
 
   const [zip, setZip] = useState('');
-  // const [weather, setWeather] = useState([]);
+  
 
   const handleEntry = (e) => {
     setZip(e.target.value);
@@ -21,15 +21,7 @@ function App() {
   };
 
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const weatherData = await fetch(
-  //     `http://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=f07b010bc0b89ba24ca495e6020128d3`
-  //   ).then((response) => response.json());
-  //   setWeather(weatherData);
-  // }
-  // console.log(weather)
-
+ 
 
   return (
     <>
