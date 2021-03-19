@@ -1,32 +1,31 @@
-import { useState } from 'react';
-import Font, { Text } from 'react-font'
-import { useHistory } from 'react-router-dom';
+import Font from 'react-font'
+import { Link } from 'react-router-dom';
 
 
 
-const UI = ({tstyle,bstyle}) => {
+const UI = ({tstyle,bstyle,handleEntry,handleSubmit}) => {
 
-    const [zip, setZip] = useState('');
-    const [weather, setWeather] = useState('');
-    const history = useHistory();
+    // const [zip, setZip] = useState('');
+    // const [weather, setWeather] = useState('');
+    // const history = useHistory();
     
 
-    const _handleEntry = (e) => {
-        setZip(e.target.value);
-    };
+    // const _handleEntry = (e) => {
+    //     setZip(e.target.value);
+    // };
 
 
-    const _handleSubmit = async (e) => {
-            e.preventDefault();
-            const weatherData = await fetch(
-            `http://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=f07b010bc0b89ba24ca495e6020128d3`
-            ).then((response) => response.json());
-            setWeather(weatherData);
-            // console.log(weatherData);
-            }
-            console.log(weather)
-            // let path ='/Weather1'
-            // history.push(path);
+    // const _handleSubmit = async (e) => {
+    //         e.preventDefault();
+    //         const weatherData = await fetch(
+    //         `http://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=f07b010bc0b89ba24ca495e6020128d3`
+    //         ).then((response) => response.json());
+    //         setWeather(weatherData);
+    //         // console.log(weatherData);
+    //         }
+    //         console.log(weather)
+    //         // let path ='/Weather1'
+    //         // history.push(path);
 
     
     
@@ -36,7 +35,7 @@ const UI = ({tstyle,bstyle}) => {
         <div>
             <>
             <Font family='Stick' style={{fontSize:70, margin:0}} onAllLoad={()=>console.log('all fonts loaded')}>
-            <form onSubmit={_handleSubmit}style={{fontSize:25, margin:30}}>
+            <form onSubmit={handleSubmit}style={{fontSize:25, margin:30}}>
                 <label htmlFor='zip' > What Would You Like To See?
                     </label><br/>
                     <input
@@ -44,7 +43,7 @@ const UI = ({tstyle,bstyle}) => {
                         id='zip'
                         name='zip'
                         placeholder = "Enter Your Zip:"
-                        onChange={_handleEntry}
+                        onChange={handleEntry}
                     /> <br/>   
                      <label htmlFor='tcolor'> Choose A Text Color &nbsp;
                     </label>
@@ -83,7 +82,9 @@ const UI = ({tstyle,bstyle}) => {
                         <option value="train">Train</option>
                         </optgroup>
                     </select><br/>
-                
+                {/* <Link to= '/Weather1'>
+                <button type='submit' style={{width:'300px', height:'40px'}}>See Weather</button>
+                </Link> */}
                 <button type='submit' style={{width:'300px', height:'40px'}}>See Weather</button>
             </form>
             </Font>

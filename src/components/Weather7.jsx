@@ -2,8 +2,9 @@
 
 const Weather7 = () => {
     return (
-        <div>
+        <div className="App">
             <h1>weather 7</h1>
+
         </div>
     )
 }

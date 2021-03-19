@@ -1,35 +1,19 @@
-import React from 'react'
-// import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const Weather1 = () => {
 
-// const [weather, setWeather] = useState('');
+function Weather1 ({weather}) {
 
-// useEffect(() => {
-//        fetch( `http://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=f07b010bc0b89ba24ca495e6020128d3`
-//         ).then((response) => response.json())
-//         .then((data)=> {
-//         setWeather(data); 
-//         })
-        
-//         // console.log(weatherData);
-//         },
-   
-//  [])
 
-//  useEffect(() => {
-//     (async () => {
-//         const blogData = await fetch(
-//             'http://127.0.0.1:3333/blogs'
-//         ).then((response) => response.json());
-//         setBlogs(blogData);
-//     })();
-// }, [reload])
     
     return (
-        <div>
-            <h1>w1</h1>
-        </div>
+            <div className="App">
+                <h1>weather 1 page</h1>
+                <h2>{weather}</h2>
+                <Link to= '/Weather7'>
+                <button type='submit' style={{width:'300px', height:'40px'}}>See 7 Weather</button>
+                </Link>
+            </div>
+        
     )
     }
 
