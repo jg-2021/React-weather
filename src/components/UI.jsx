@@ -48,6 +48,7 @@ const UI = ({tstyle,bstyle,handleEntry,handleSubmit}) => {
                      <label htmlFor='tcolor'> Choose A Text Color &nbsp;
                     </label>
                     <select name="tcolor" id="tcolor" onChange={tstyle}>
+                        <option value="">Pick A Color</option>
                         <option value="green">Green</option>
                         <option value="red">Red</option>
                         <option value="black">Black</option>
@@ -58,6 +59,7 @@ const UI = ({tstyle,bstyle,handleEntry,handleSubmit}) => {
                     <label htmlFor='bcolor'> Choose A Background Color &nbsp;
                     </label>
                     <select name="bcolor" id="bcolor" onChange={bstyle}>
+                    <option value="">Pick A Color</option>
                     <option value="black">Black</option>
                         <option value="blue">Blue</option>
                         <option value="red">Red</option>
