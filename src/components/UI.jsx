@@ -35,7 +35,7 @@ const UI = ({tstyle,bstyle,handleEntry,handleSubmit}) => {
         <div>
             <>
             <Font family='Stick' style={{fontSize:70, margin:0}} onAllLoad={()=>console.log('all fonts loaded')}>
-            <form onSubmit={handleSubmit}style={{fontSize:25, margin:30}}>
+            <form style={{fontSize:25, margin:30}}>
                 <label htmlFor='zip' > What Would You Like To See?
                     </label><br/>
                     <input
@@ -82,10 +82,10 @@ const UI = ({tstyle,bstyle,handleEntry,handleSubmit}) => {
                         <option value="train">Train</option>
                         </optgroup>
                     </select><br/>
-                {/* <Link to= '/Weather1'>
+                <Link to= '/Weather1'>
                 <button type='submit' style={{width:'300px', height:'40px'}}>See Weather</button>
-                </Link> */}
-                <button type='submit' style={{width:'300px', height:'40px'}}>See Weather</button>
+                </Link>
+                {/* <button type='submit' style={{width:'300px', height:'40px'}}>See Weather</button> */}
             </form>
             </Font>
             {/* {!!submitError && <div className='error'>{submitError}</div>} */}

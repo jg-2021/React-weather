@@ -13,7 +13,7 @@ import React from 'react'
 function App() {
 
   const [zip, setZip] = useState('');
-  const [weather, setWeather] = useState('');
+  // const [weather, setWeather] = useState([]);
 
   const handleEntry = (e) => {
     setZip(e.target.value);
@@ -21,14 +21,14 @@ function App() {
   };
 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const weatherData = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=f07b010bc0b89ba24ca495e6020128d3`
-    ).then((response) => response.json());
-    setWeather(weatherData);
-  }
-  console.log(weather)
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const weatherData = await fetch(
+  //     `http://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=f07b010bc0b89ba24ca495e6020128d3`
+  //   ).then((response) => response.json());
+  //   setWeather(weatherData);
+  // }
+  // console.log(weather)
 
 
   return (
@@ -36,8 +36,8 @@ function App() {
       <Router>
         <Switch>
 
-          <Route exact path='/' ><Home handleEntry={handleEntry} handleSubmit={handleSubmit}/></Route>
-          <Route path='/Weather1' component={Weather1} weather={weather}></Route>
+          <Route exact path='/' ><Home handleEntry={handleEntry}/></Route>
+          <Route path='/Weather1'><Weather1 zip={zip}/></Route>
           <Route path='/Weather7' component={Weather7}></Route>
 
 

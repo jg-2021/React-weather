@@ -36,7 +36,7 @@ const Home = ({handleEntry,handleSubmit}) => {
     return (
         <div className="App" style={{ color: tcolor, backgroundColor: bcolor, minWidth: '100vw', minHeight: '100vh', position: 'absolute', overflow: 'hidden' }}>
             <Header />
-            <UI tstyle={tstyle} bstyle={bstyle} handleEntry={handleEntry} handleSubmit={handleSubmit}/>
+            <UI tstyle={tstyle} bstyle={bstyle} handleEntry={handleEntry}/>
         </div>
     )
 }
