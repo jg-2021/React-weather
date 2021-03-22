@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const UI = ({tstyle,bstyle,handleEntry,handleSubmit}) => {
+const UI = ({tstyle,bstyle,handleEntry}) => {
 
     // const [zip, setZip] = useState('');
     // const [weather, setWeather] = useState('');

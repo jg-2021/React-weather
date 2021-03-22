@@ -13,8 +13,18 @@ import React from 'react'
 function App() {
 
   const [zip, setZip] = useState('');
-  
+  const [tcolor, setTcolor] = useState('');
+  const [bcolor, setBcolor] = useState('');
 
+  const tstyle = (e) => {
+    const color = e.target.value
+    setTcolor(color)
+}
+const bstyle = (e) => {
+    const color = e.target.value
+    return (color !== tcolor) ? setBcolor(color) : (alert('You wont be able to see!'))
+  
+}
   const handleEntry = (e) => {
     setZip(e.target.value);
     console.log(zip)
@@ -28,8 +38,8 @@ function App() {
       <Router>
         <Switch>
 
-          <Route exact path='/' ><Home handleEntry={handleEntry}/></Route>
-          <Route path='/Weather1'><Weather1 zip={zip}/></Route>
+          <Route exact path='/' ><Home handleEntry={handleEntry} tstyle={tstyle} bstyle={bstyle} bcolor={bcolor} tcolor={tcolor}/></Route>
+          <Route path='/Weather1'><Weather1 zip={zip} tcolor={tcolor} bcolor={bcolor}/></Route>
           <Route path='/Weather7' component={Weather7}></Route>
 
 

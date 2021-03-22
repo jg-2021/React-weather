@@ -3,9 +3,8 @@ import Header from './Header';
 import { useState } from 'react';
 
 
-const Home = ({handleEntry,handleSubmit}) => {
-    const [tcolor, setTcolor] = useState('');
-    const [bcolor, setBcolor] = useState('');
+const Home = ({handleEntry,bstyle,tstyle,tcolor,bcolor}) => {
+   
     // const [zip, setZip] = useState('');
     // const [weather, setWeather] = useState('');
 
@@ -25,14 +24,8 @@ const Home = ({handleEntry,handleSubmit}) => {
     // let path ='/Weather1'
     // history.push(path);
 
-    const tstyle = (e) => {
-        const color = e.target.value
-        setTcolor(color)
-    }
-    const bstyle = (e) => {
-        const color = e.target.value
-        return (color !== tcolor) ? setBcolor(color) : (alert('You wont be able to see!'))
-    }
+    
+    
     return (
         <div className="App" style={{ color: tcolor, backgroundColor: bcolor, minWidth: '100vw', minHeight: '100vh', position: 'absolute', overflow: 'hidden' }}>
             <Header />
