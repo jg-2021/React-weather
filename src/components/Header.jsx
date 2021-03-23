@@ -2,6 +2,7 @@ import Font, { Text } from 'react-font'
 import styled, { keyframes } from 'styled-components';
 import { pulse, lightSpeedIn } from 'react-animations';
 
+
 const pulseDiv = keyframes`
 0% {
     transform: scale(0); 

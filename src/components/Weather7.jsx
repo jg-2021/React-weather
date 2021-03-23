@@ -3,6 +3,7 @@ import Font, { Text } from 'react-font'
 
 
 
+
 const Weather7 = ({ zip, bcolor, tcolor, lat, long }) => {
     const [weather, setWeather] = useState({daily:[]});
 
@@ -34,6 +35,7 @@ const Weather7 = ({ zip, bcolor, tcolor, lat, long }) => {
     }, []);
     console.log('weather', weather)
     console.log('daily weather', weather.daily)
+    
      return (
         <>
         <div className="App" style={{ color: tcolor, backgroundColor: bcolor, minWidth: '100vw', minHeight: '100vh', position: 'absolute', overflow: 'hidden'}}>

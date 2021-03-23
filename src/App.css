@@ -49,3 +49,11 @@
   50% {left: 90%;}
   100% {left: 0%;}
 }
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}

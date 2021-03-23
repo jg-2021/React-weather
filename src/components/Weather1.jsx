@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Font, { Text } from 'react-font'
+import {useSpring, animated} from 'react-spring'
 // import useDataApi from 'use-data-api'
 // import axios from 'axios'
 
@@ -8,7 +9,7 @@ import Font, { Text } from 'react-font'
 
 const Weather1 = ({ zip, bcolor, tcolor,setlat,setlong }) => {
 
-
+    
     const [weather, setWeather] = useState([]);
     
     // const [icon, seticon] = useState('');
@@ -52,7 +53,12 @@ const Weather1 = ({ zip, bcolor, tcolor,setlat,setlong }) => {
 
     // console.log(lat)
     // console.log(long)
-
+    // const props = useSpring({ number:weather.main?.temp, from: { number: 0   } })
+    const tem = useSpring({ config: { duration: 1500 }, from: { val:0 }, to: { val: weather.main?.temp }, delay: 1000 });
+    const hum = useSpring({ config: { duration: 2500 }, from: { val:0 }, to: { val: weather.main?.humidity}, delay: 1000 });
+    const hi = useSpring({ config: { duration: 3500 }, from: { val:0 }, to: { val: weather.main?.temp_max }, delay: 1000 });
+    const lo = useSpring({ config: { duration: 4500 }, from: { val:0 }, to: { val: weather.main?.temp_min }, delay: 1000 });
+    const ws = useSpring({ config: { duration: 5500 }, from: { val:0 }, to: { val: weather.wind?.speed }, delay: 1000 });
     const icon = `http://openweathermap.org/img/w/${weather.weather?.[0].icon}.png`;
 
 
@@ -76,12 +82,18 @@ const Weather1 = ({ zip, bcolor, tcolor,setlat,setlong }) => {
                         <option value="Oi">Oi</option>
                     </select><br/>
                 </div>  
-                  
-                <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>Temperature: {weather.main?.temp}&deg;F</Text></label>
-                <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>Humidity: {weather.main?.humidity}</Text></label>
+                {/* <animated.div strokeDashoffset={props.x}>I will fade in</animated.div> */}
+                {/* <animated.span>{props.number}</animated.span> */}
+                <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>Temperature: <animated.span>{tem.val.interpolate(val => Math.floor(val))}</animated.span>&deg;F</Text></label>
+                <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>Humidity: <animated.span>{hum.val.interpolate(val => Math.floor(val))}</animated.span>%</Text></label>
+                <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>High: <animated.span>{hi.val.interpolate(val => Math.floor(val))}</animated.span>&deg;F</Text></label>
+                <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>Low: <animated.span>{lo.val.interpolate(val => Math.floor(val))}</animated.span>&deg;F</Text></label>
+                <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>Wind Speed: <animated.span>{ws.val.interpolate(val => Math.floor(val))}</animated.span> MPH</Text></label>
+                {/* <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>Temperature: <animated.span>{up.number}</animated.span>&deg;F</Text></label> */}
+                {/* <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>Humidity: {weather.main?.humidity}</Text></label>
                 <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>High: {weather.main?.temp_max}</Text></label>
                 <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>Low: {weather.main?.temp_min}</Text></label>
-                <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>Wind Speed: {weather.wind?.speed}</Text></label>
+                <label htmlFor='text2'><Text family={text2} style={{fontSize:40, margin:0}} onLoad={()=>console.log('loaded text 1')}>Wind Speed: {weather.wind?.speed}</Text></label> */}
                 <select name="text2" id="text2" onChange={tstyle2}>
                         <option value="">Pick A Font</option>
                         <option value="Shadows Into Light">Shadows Into Light</option>
