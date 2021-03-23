@@ -6,12 +6,11 @@ import Font, { Text } from 'react-font'
 
 
 
-const Weather1 = ({ zip, bcolor, tcolor }) => {
+const Weather1 = ({ zip, bcolor, tcolor,setlat,setlong }) => {
 
 
     const [weather, setWeather] = useState([]);
-    const [lat, setlat] = useState('');
-    const [long, setlong] = useState('');
+    
     // const [icon, seticon] = useState('');
     const [text1, setText1] = useState('');
     const [text2, setText2] = useState('');
@@ -51,8 +50,8 @@ const Weather1 = ({ zip, bcolor, tcolor }) => {
         setlong(weather.coord?.lon)
     }, [weather])
 
-    console.log(lat)
-    console.log(long)
+    // console.log(lat)
+    // console.log(long)
 
     const icon = `http://openweathermap.org/img/w/${weather.weather?.[0].icon}.png`;
 
@@ -93,7 +92,7 @@ const Weather1 = ({ zip, bcolor, tcolor }) => {
                         <option value="Cardo">Cardo</option>
                     </select><br/>
 
-                <label htmlFor='text3'><Text family={text3} style={{fontSize:65, margin:0}} onLoad={()=>console.log('loaded text 1')}>{weather.weather?.[0].description}</Text></label>
+                <label htmlFor='text3'><Text family={text3} style={{fontSize:65, margin:0, textTransform: 'capitalize'}} onLoad={()=>console.log('loaded text 1')}>{weather.weather?.[0].description}</Text></label>
                 <select name="text3" id="text3" onChange={tstyle3}>
                         <option value="">Pick A Font</option>
                         <option value="Indie Flower">Indie Flower</option>
