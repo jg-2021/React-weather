@@ -1,12 +1,10 @@
 import './App.css';
 import Home from './components/Home'
-import { Children, useState } from 'react';
+import { useState } from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Weather1 from './components/Weather1';
 import Weather7 from './components/Weather7';
 import React from 'react';
-import { AnimatePresence } from "framer-motion";
-import { render } from 'react-dom'
 import { useTrail, a } from 'react-spring'
 import './components/styles.css'
 
@@ -49,7 +47,6 @@ function App() {
 
   const tstyle = (e) => {
     const color = e.target.value
-    // setTcolor(color)
     return (color !== bcolor) ? setTcolor(color) : (alert('You wont be able to see!'))
   }
   const bstyle = (e) => {
@@ -61,8 +58,6 @@ function App() {
     setZip(e.target.value);
     console.log(zip)
   };
-  // console.log('lat',lat)
-  // console.log('long',long)
 
 
 
