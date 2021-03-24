@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.boxBounce{
+  background-color: red;
+  position: relative; /*without position defined animations wont work*/
+  height: 30px;
+  width: 30px;
+  animation: bounce 5s infinite;
+}
+@keyframes bounce {
+  0% {left: 0%;}
+  50% {left: 90%;}
+  100% {left: 0%;}
+}
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
