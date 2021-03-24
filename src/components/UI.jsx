@@ -5,27 +5,6 @@ import { Link } from 'react-router-dom';
 
 const UI = ({tstyle,bstyle,handleEntry}) => {
 
-    // const [zip, setZip] = useState('');
-    // const [weather, setWeather] = useState('');
-    // const history = useHistory();
-    
-
-    // const _handleEntry = (e) => {
-    //     setZip(e.target.value);
-    // };
-
-
-    // const _handleSubmit = async (e) => {
-    //         e.preventDefault();
-    //         const weatherData = await fetch(
-    //         `http://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=f07b010bc0b89ba24ca495e6020128d3`
-    //         ).then((response) => response.json());
-    //         setWeather(weatherData);
-    //         // console.log(weatherData);
-    //         }
-    //         console.log(weather)
-    //         // let path ='/Weather1'
-    //         // history.push(path);
 
     
     

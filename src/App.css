@@ -39,7 +39,7 @@
 
 .boxBounce{
   background-color: red;
-  position: relative; /*without position defined animations wont work*/
+  position: relative;
   height: 30px;
   width: 30px;
   animation: bounce 5s infinite;

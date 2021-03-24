@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Font, { Text } from 'react-font'
 
 
 
@@ -7,7 +6,6 @@ import Font, { Text } from 'react-font'
 const Weather7 = ({ zip, bcolor, tcolor, lat, long }) => {
     const [weather, setWeather] = useState({daily:[]});
 
-    var d = new Date();
     var sd = new Array(7);
     sd[0]='sunday';
     sd[1]='monday';
@@ -22,14 +20,11 @@ const Weather7 = ({ zip, bcolor, tcolor, lat, long }) => {
     useEffect(() => {
         (async () => {
             const Data = await fetch(
-                // `https://api.openweathermap.org/data/2.5/onecall?lat=33.7414&lon=84.2595&units=imperial&exclude=hourly,current,minutely,alerts&appid=f07b010bc0b89ba24ca495e6020128d3`
 
 
                 `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=imperial&exclude=hourly,current,minutely,alerts&appid=f07b010bc0b89ba24ca495e6020128d3`
-                // `http://api.openweathermap.org/data/2.5/weather?zip=${zip}&units=imperial&appid=f07b010bc0b89ba24ca495e6020128d3`
             ).then((response) => response.json());
             setWeather(Data);
-            // console.log(Data);
 
         })();
     }, []);
@@ -47,7 +42,6 @@ const Weather7 = ({ zip, bcolor, tcolor, lat, long }) => {
         weather.daily.slice(0,7).map((day,index) => {
             const icon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`;
             
-            // console.log('day', day);
             return(
                 
                 <div key={index} style={{textAlign:'center'}}>

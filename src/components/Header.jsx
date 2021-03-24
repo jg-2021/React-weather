@@ -28,17 +28,7 @@ const LightDiv = styled.div`
 
 
 
-const Button = styled.button`
-  color: white;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  background:#4e90e7;
-`;
-const Wrapper = styled.div`
-  padding: 4em;
-  background: #4e90e7;
-`;
+
 const Header = () => {
     return (
         <div>
