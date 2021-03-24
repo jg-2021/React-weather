@@ -20,7 +20,7 @@ function Trail({ open, children, ...props }) {
     from: { opacity: 0, x: 20, height: 0 },
   })
   return (
-    
+
     <div className="trails-main" {...props}>
       <div>
         {trail.map(({ x, height, ...rest }, index) => (
@@ -49,45 +49,46 @@ function App() {
 
   const tstyle = (e) => {
     const color = e.target.value
-    setTcolor(color)
-}
-const bstyle = (e) => {
+    // setTcolor(color)
+    return (color !== bcolor) ? setTcolor(color) : (alert('You wont be able to see!'))
+  }
+  const bstyle = (e) => {
     const color = e.target.value
     return (color !== tcolor) ? setBcolor(color) : (alert('You wont be able to see!'))
-  
-}
+
+  }
   const handleEntry = (e) => {
     setZip(e.target.value);
     console.log(zip)
   };
-// console.log('lat',lat)
-// console.log('long',long)
+  // console.log('lat',lat)
+  // console.log('long',long)
 
- 
+
 
   return (
     <>
-    <section id="header">
-          <Trail open={open} onClick={() => set((state) => !state)}>
-      <span>REACT</span>
-      <span>PROJECT</span>
-      <span>FOR</span>
-      <span>DIGITALCRAFTS</span>
-      <a href="https://github.com/jg-2021/React-weather">Behind The Scenes</a>
-      <a href="#one" class="button primary scrolly">THE APP</a><br/><br/>
-    
-    </Trail>  
-    </section>
+
 
       <Router>
         <Switch >
-        <section id="one">
-          <Route exact path='/' ><Home handleEntry={handleEntry} tstyle={tstyle} bstyle={bstyle} bcolor={bcolor} tcolor={tcolor}/></Route>
-          <Route path='/Weather1'><Weather1 zip={zip} tcolor={tcolor} bcolor={bcolor} setlat={setlat} setlong={setlong}/></Route>
-          <Route path='/Weather7'><Weather7 lat={lat} long={long} bcolor={bcolor} tcolor={tcolor} zip={zip}/></Route>
-          </section>
+          
+            <Route exact path='/' ><section >
+              <Trail open={open} onClick={() => set((state) => !state)}>
+                <span>REACT</span>
+                <span>PROJECT</span>
+                <span>FOR</span>
+                <span>DIGITALCRAFTS</span>
+                <a href="https://github.com/jg-2021/React-weather">Behind The Scenes</a>
+                <a href="#one" class="button primary scrolly">THE APP</a><br /><br />
 
+              </Trail>
+            </section><section id="one"><Home handleEntry={handleEntry} tstyle={tstyle} bstyle={bstyle} bcolor={bcolor} tcolor={tcolor} /></section></Route>
 
+            <Route path='/Weather1'><Weather1 zip={zip} tcolor={tcolor} bcolor={bcolor} setlat={setlat} setlong={setlong} /></Route>
+            <Route path='/Weather7'><Weather7 lat={lat} long={long} bcolor={bcolor} tcolor={tcolor} zip={zip} /></Route>
+
+          
         </Switch>
       </Router>
     </>
