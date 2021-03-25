@@ -35,7 +35,7 @@ const Weather1 = ({ zip, bcolor, tcolor,setlat,setlong }) => {
     useEffect(() => {
         (async () => {
             const Data = await fetch(
-                `http://api.openweathermap.org/data/2.5/weather?zip=${zip}&units=imperial&appid=f07b010bc0b89ba24ca495e6020128d3`
+                `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&units=imperial&appid=f07b010bc0b89ba24ca495e6020128d3`
             ).then((response) => response.json());
             setWeather(Data);
             console.log(Data);

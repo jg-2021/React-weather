@@ -40,7 +40,7 @@ const Weather7 = ({ zip, bcolor, tcolor, lat, long }) => {
 
         {!!weather.daily.length ?
         weather.daily.slice(0,7).map((day,index) => {
-            const icon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`;
+            const icon = `https://openweathermap.org/img/w/${day.weather[0].icon}.png`;
             
             return(
                 
